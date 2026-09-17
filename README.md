@@ -145,7 +145,9 @@ streamlit run app.py
 | `VECTOR_STORE_PATH` | `data/vector_store` | Path to the persisted ChromaDB collection |
 | `COLLECTION_NAME` | `ml_rag_assistant` | ChromaDB collection name |
 | `EMBEDDING_MODEL` | `all-MiniLM-L6-v2` | Sentence-transformers model used for query embedding |
-| `ALLOWED_ORIGINS` | `http://localhost:8501` | CORS origin(s) allowed to call the API |
+| `FRONTEND_ORIGIN` | `http://localhost:8501` | CORS origin(s) allowed to call the API |
+| `OLLAMA_HOST` | `http://localhost:11434` | Ollama server address |
+| `TOP_K` | `6` | Number of chunks retrieved per query |
 
 **Frontend (`frontend/.env`)**
 
@@ -211,13 +213,9 @@ chunking, and increased retrieved chunks (`k`) from 4 to 6 — which fixed the a
 
 ## Screenshots
 
-> Add screenshots of the running app here (frontend chat view + a sample grounded answer with
-> citations).
+`![Chat interface](screenshots/chat.png)` 
+`![Sample answer with citations](screenshots/answer.png)` 
 
-```
-![Chat interface](screenshots/chat.png)
-![Sample answer with citations](screenshots/answer.png)
-```
 
 ## Notes
 
