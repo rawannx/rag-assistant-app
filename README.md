@@ -213,8 +213,9 @@ chunking, and increased retrieved chunks (`k`) from 4 to 6 — which fixed the a
 
 ## Screenshots
 
-`![Chat interface](screenshots/chat.png)` 
-`![Sample answer with citations](screenshots/answer.png)` 
+![Chat interface](screenshots/chat.png)
+
+![Sample answer with citations](screenshots/answer.png)
 
 
 ## Notes
