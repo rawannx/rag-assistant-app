@@ -1,0 +1,120 @@
+question,retrieved_sources,answer,correct
+What is the difference between Ridge and Lasso regression?,Linear Models — scikit-learn documentation.pdf (p.1); Linear Models — scikit-learn documentation.pdf (p.1); Linear Models — scikit-learn documentation.pdf (p.1); Linear Models — scikit-learn documentation.pdf (p.2); Linear Models — scikit-learn documentation.pdf (p.1); Linear Models — scikit-learn documentation.pdf (p.1),"According to the context, the difference between Ridge and Lasso regression can be summarized as follows:
+
+- Ridge regression minimizes a penalized residual sum of squares, whereas Lasso regression adds a term to the objective function that promotes sparsity.
+- The complexity parameter controls the amount of shrinkage in Ridge regression, with larger values resulting in more robust coefficients to collinearity. In Lasso regression, the -norm of the coefficient vector is used, which promotes sparsity.
+- Lasso regression can recover the exact set of non-zero coefficients under certain conditions, while Ridge regression does not guarantee this.
+- The choice of solver for Ridge regression can be automatically chosen, whereas the choice of solver for Lasso regression is not specified in the context.",partial
+How does K-means clustering work?,ML papers (Full Source).pdf (p.61); Clustering — scikit-learn documentation.pdf (p.1); Clustering — scikit-learn documentation.pdf (p.1); Clustering — scikit-learn documentation.pdf (p.1); Clustering — scikit-learn documentation.pdf (p.1); Clustering — scikit-learn documentation.pdf (p.1),"To answer your question, I'll provide a step-by-step explanation of how K-means clustering works based on the provided context.
+
+According to [Clustering — scikit-learn documentation.pdf, p.1], the K-means algorithm divides a set of samples into disjoint clusters, each described by the mean of the samples in the cluster. The means are commonly called the cluster “centroids.”
+
+The algorithm consists of three steps:
+
+1. **Assigning each sample to its nearest centroid**: This is done in the first step after initialization. The algorithm repeats this step in the second loop of the K-means algorithm.
+2. **Creating new centroids by taking the mean value of all of the samples assigned to each previous centroid**: This is done in the second step after initialization. The algorithm repeats this step in the second loop of the K-means algorithm.
+3. **Computing the difference between the old and the new centroids and repeating until this value is less than a threshold**: This is done in the second loop of the K-means algorithm, where the algorithm repeats steps 1 and 2 until the centroids do not move significantly.
+
+Additionally, the algorithm can be understood through the concept of Voronoi diagrams, as mentioned in [Clustering — scikit-learn documentation.pdf, p.1].
+
+It's worth noting that the algorithm can be initialized using various methods, including choosing samples from the dataset, as mentioned in [Clustering — scikit-learn documentation.pdf, p.1].",yes
+What is logistic regression used for?,Linear Models — scikit-learn documentation.pdf (p.2); Linear Models — scikit-learn documentation.pdf (p.2); ML papers (Full Source).pdf (p.39); ML papers (Full Source).pdf (p.39); Linear Models — scikit-learn documentation.pdf (p.1); ML papers (Full Source).pdf (p.40),"Based on the context provided, here are the answers to the question ""What is logistic regression used for?"":
+
+1. Logistic regression is used for classification problems. [ML papers (Full Source).pdf, p.39]
+2. It is used to solve classification problems, especially when the dependent variables are in a binary or discrete format such as 0 or 1. [ML papers (Full Source).pdf, p.39]
+3. Logistic regression works with categorical variables such as 0 or 1, Yes or No, True or False, Spam or not spam, etc. [ML papers (Full Source).pdf, p.39]
+4. Logistic regression is a predictive analysis algorithm that works on the concept of probability. [ML papers (Full Source).pdf, p.39]
+5. It is used for regression problems, but it is different from linear regression in terms of how it is used. [ML papers (Full Source).pdf, p.39]
+6. Logistic regression uses sigmoid function or logistic function to model the data. [ML papers (Full Source).pdf, p.39]
+7. It is used for binary classification problems, such as 0/1 or pass/fail. [Linear Models — scikit-learn documentation.pdf, p.2]
+8. Logistic regression is used for multi-class classification problems, such as cats, dogs, lions. [Linear Models — scikit-learn documentation.pdf, p.2]
+9. It is used for ordinal classification problems, such as low, medium, high. [Linear Models — scikit-learn documentation.pdf, p.2]
+10. Logistic regression can be used for predictive analysis, such as salary forecasting, real estate prediction, arriving at ETAs in traffic. [ML papers (Full Source).pdf, p.39]
+
+Note that some of these claims may overlap or be redundant, but they all contribute to the understanding of what logistic regression is used for.",yes
+How does the K-Nearest Neighbors algorithm classify a new point?,ML papers (Full Source).pdf (p.82); Nearest Neighbors — scikit-learn documentation.pdf (p.1); Nearest Neighbors — scikit-learn documentation.pdf (p.1); ML papers (Full Source).pdf (p.82); Nearest Neighbors — scikit-learn documentation.pdf (p.1); Nearest Neighbors — scikit-learn documentation.pdf (p.1),"Based on the provided context, here's how the K-Nearest Neighbors algorithm classifies a new point:
+
+1. The algorithm finds a predefined number of training samples closest in distance to the new point (p.1, [Nearest Neighbors — scikit-learn documentation.pdf]).
+2. The number of samples can be a user-defined constant (k-nearest neighbor learning), or vary based on the local density of points (radius-based neighbor learning) (p.1, [Nearest Neighbors — scikit-learn documentation.pdf]).
+3. The distance can be any metric measure, and standard Euclidean distance is the most common choice (p.1, [Nearest Neighbors — scikit-learn documentation.pdf]).
+4. The classes in sklearn.neighbors are predicted based on the majority vote of the nearest neighbors (p.82, [ML papers (Full Source).pdf]).
+5. If there is more than one class found in the closest points, the algorithm may choose the most common class among those nearest neighbors (p.82, [ML papers (Full Source).pdf]).
+
+In summary, the K-Nearest Neighbors algorithm classifies a new point by finding the nearest neighbors, determining their labels, and choosing the most common class among them.",yes
+What is a Random Forest and how does it relate to bagging?,ML papers (Full Source).pdf (p.72); Ensembles — scikit-learn d.pdf (p.2); ML papers (Full Source).pdf (p.73); Ensembles — scikit-learn d.pdf (p.2); Ensembles — scikit-learn d.pdf (p.2); Decision Trees — scikit-learn documentation.pdf (p.2),"Here are the answers to your questions:
+
+1. What is a Random Forest?
+
+A Random Forest is an ensemble learning method where multiple decision trees are constructed and then merged to get a more accurate prediction. This concept has been around for longer than the name that is most strongly attached to it, but the name is primarily associated with Breiman, who also described the CART algorithm in unit 2 ([ML papers (Full Source).pdf, p.72]).
+
+2. How does a Random Forest relate to bagging?
+
+A Random Forest uses bagging as one of the methods to create randomness from a standard dataset. In a Random Forest, each tree is trained on a bootstrap sample from the dataset, and the trees are different from each other due to the use of bagging. This is the first of the methods that a Random Forest uses to create randomness ([Ensembles — scikit-learn d.pdf, p.2]). Additionally, Random Forests also use a random subset of the features at each node, which can be controlled by the max_features parameter, to limit the choices that the decision tree can make and add more randomness to the ensemble ([Ensembles — scikit-learn d.pdf, p.2]).",partial
+How do you handle missing data in pandas?,Working with missing data — pandas documentation.pdf (p.1); Working with missing data — pandas documentation.pdf (p.1); Working with missing data — pandas documentation.pdf (p.1); Working with missing data — pandas documentation.pdf (p.1); Working with missing data — pandas documentation.pdf (p.1); Categorical data — pandas documentation.pdf (p.3),"To handle missing data in pandas, the following steps can be taken:
+
+1. Detect missing values using `isna()` or `notna()` methods. These methods will consider 'No' as missing values as well. [Working with missing data — pandas documentation.pdf, p.1]
+
+2. Insert missing values by assigning to a Series or DataFrame. The missing value sentinel used will be chosen based on the dtype. For object types, pandas will use the value given. [Working with missing data — pandas documentation.pdf, p.1]
+
+3. Propagate missing values through arithmetic operations between pandas objects. Missing values will be treated as zero when summing data and as 1 when taking the product. [Working with missing data — pandas documentation.pdf, p.1]
+
+4. Ignore missing values in cumulative methods like `cumsum()` and `cumprod()` by default. However, `skipna=False` can be used to include NA values in the calculation. [Working with missing data — pandas documentation.pdf, p.1]
+
+5. Drop missing data using `dropna()` which drops rows or columns. [Working with missing data — pandas documentation.pdf, p.1]
+
+6. Fill missing values using `DataFrame.where()` or `Series.where()`. These functions can be used to fill NA values. [Working with missing data — pandas documentation.pdf, p.1]
+
+Note: The documentation does not provide information on how to handle missing data for categorical data. [Categorical data — pandas documentation.pdf, p.3]",yes
+What does the groupby function do in pandas?,Group by — pandas documentation.pdf (p.1); Group by — pandas documentation.pdf (p.1); Group by — pandas documentation.pdf (p.1); Group by — pandas documentation.pdf (p.1); Group by — pandas documentation.pdf (p.1); Group by — pandas documentation.pdf (p.1),"According to the pandas documentation, here's what the groupby function does:
+
+- It returns a pandas.api.typing.DataFrameGroupBy instance: [source, p.1]
+- It groups the DataFrame by either one or multiple columns, or a combination of columns and index levels: [source, p.1]
+- It operates along axis 0 (rows) by default: [source, p.1]
+- It allows specifying a mapping of labels to group names, which can be done in various ways, including:
+  - A Python function, to be called on each of the index labels: [source, p.1]
+  - A list or NumPy array of the same length as the index: [source, p.1]
+  - A dict or Series, providing a label -> group name mapping: [source, p.1]
+  - A string indicating either a column name or an index level name to be used to group: [source, p.1]
+  - A list of any of the above things: [source, p.1]
+
+Let me know if you have any further questions!",yes
+What is the difference between supervised and unsupervised learning?,ML papers (Full Source).pdf (p.58); ML papers (Full Source).pdf (p.61); ML papers (Full Source).pdf (p.61); ML papers (Full Source).pdf (p.18); ML papers (Full Source).pdf (p.59); ML papers (Full Source).pdf (p.59),"Based on the provided context, here are the differences between supervised and unsupervised learning:
+
+1. Supervised learning vs Unsupervised learning: Supervised learning algorithms are trained using labeled data, whereas unsupervised learning algorithms are trained using unlabeled data. ([ML papers (Full Source).pdf, p.56])
+
+2. Feedback mechanism: Supervised learning models take direct feedback to check if it is predicting correct output or not. In contrast, unsupervised learning models do not take any feedback. ([ML papers (Full Source).pdf, p.61])
+
+3. Goal of the model: The goal of supervised learning is to train the model so that it can predict the output when it is given new data. The goal of unsupervised learning is to find the hidden patterns and useful insights from the data. ([ML papers (Full Source).pdf, p.18] and [ML papers (Full Source).pdf, p.61])
+
+4. Output: Supervised learning models predict the output, whereas unsupervised learning models find the hidden patterns in the data. ([ML papers (Full Source).pdf, p.61])
+
+5. Input data: Supervised learning models are provided with input data along with the corresponding output. In contrast, unsupervised learning models are provided with only input data. ([ML papers (Full Source).pdf, p.61])
+
+6. Classification or categorization: Supervised learning involves classification or categorization, whereas unsupervised learning does not include classification or categorization in the observations. ([ML papers (Full Source).pdf, p.18])
+
+7. Accuracy: Supervised learning models produce accurate results, whereas unsupervised learning models may give less accurate results. ([ML papers (Full Source).pdf, p.61])",yes
+What is the purpose of a Support Vector Machine?,ML papers (Full Source).pdf (p.54); Support Vector Machines — scikit-learn documentation.pdf (p.1); ML papers (Full Source).pdf (p.55); Support Vector Machines — scikit-learn documentation.pdf (p.1); ML papers (Full Source).pdf (p.54); ML papers (Full Source).pdf (p.55),"The purpose of a Support Vector Machine (SVM) can be summarized as follows:
+
+* The goal of the SVM algorithm is to create the best line or decision boundary that can segregate n-dimensional space into classes so that we can easily put the new data point in the correct category in the future. ([ML papers (Full Source).pdf, p.54])
+* The algorithm chooses the extreme points/vectors that help in creating the hyperplane, and these extreme cases are called as support vectors, hence the algorithm is termed as Support Vector Machine. ([ML papers (Full Source).pdf, p.54])
+* The best decision boundary is called a hyperplane. ([ML papers (Full Source).pdf, p.54])
+* The purpose of SVM is to create a decision boundary that has a maximum margin, which means the maximum distance between the data points. ([ML papers (Full Source).pdf, p.55])
+* The data points or vectors that are the closest to the hyperplane and which affect the position of the hyperplane are termed as Support Vector. ([ML papers (Full Source).pdf, p.55])
+
+According to the scikit-learn documentation, the advantages of support vector machines include:
+
+* Effective in high dimensional spaces. ([Support Vector Machines — scikit-learn documentation.pdf, p.1])
+* Still effective in cases where the number of dimensions is greater than the number of samples. ([Support Vector Machines — scikit-learn documentation.pdf, p.1])
+* Uses a subset of training points in the decision function (called support vectors), so it is also memory efficient. ([Support Vector Machines — scikit-learn documentation.pdf, p.1])
+* Versatile: different Kernel functions can be specified for the decision function. ([Support Vector Machines — scikit-learn documentation.pdf, p.1])",yes
+How do you select rows and columns in a pandas DataFrame?,Group by — pandas documentation.pdf (p.4); Indexing and selecting data — pandas documentation.pdf (p.3); Reshaping and pivot tables — pandas documentation.pdf (p.1); Indexing and selecting data — pandas documentation.pdf (p.1); Essential basic functionality — pandas documentation.pdf (p.6); Indexing and selecting data — pandas documentation.pdf (p.1),"To select rows and columns in a pandas DataFrame, you can use the following methods:
+
+* To select rows, you can use the `loc[]` or `iloc[]` indexing methods. `loc[]` allows label-based selection, while `iloc[]` allows integer position-based selection. For example, `df.loc['a':'f']` selects rows labeled 'a' to 'f', including the stop value.
+* To select columns, you can use the `loc[]` or `iloc[]` indexing methods. `loc[]` allows label-based selection, while `iloc[]` allows integer position-based selection. For example, `df['a':'f']` selects columns labeled 'a' to 'f', including the stop value.
+* To select a subset of rows and columns, you can use the `loc[]` or `iloc[]` indexing methods. For example, `df.loc['a':'f', 'a':'f']` selects rows labeled 'a' to 'f' and columns labeled 'a' to 'f', including the stop value.
+* To select a subset of rows and columns using a boolean array, you can use the `loc[]` indexing method. For example, `df.loc[df['column'] > 0]` selects rows where the value in the 'column' column is greater than 0.
+* To select rows using a callable, you can use the `loc[]` indexing method. For example, `df.loc(lambda x: x > 0)`, you can use a callable to select rows that meet a certain condition.
+* To select columns using the `select_dtypes()` method, you can specify the data type(s) you want to select. For example, `df.select_dtypes(include=['int64'])` selects columns with the 'int64' data type.
+* To select rows and columns using the `where()` method, you can use a boolean array or a callable to select the desired rows and columns. For example, `df.where(df['column'] > 0)` selects rows where the value in the 'column' column is greater than 0.
+
+These are just a few examples of how you can select rows and columns in a pandas DataFrame. The specific method you use will depend on the structure of your data and the conditions you want to apply.",yes
